@@ -1,42 +1,135 @@
-html {
-  /* position: relative; */
-}
-
 body {
   min-height: 100vh;
   margin: 0;
   display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+h1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
 }
 
 form {
   width: 100%;
-  background-color: beige;
-  padding: 1rem 0.5rem;
   box-sizing: border-box;
   display: flex;
-  gap: 1rem;
-  flex-flow: row wrap;
-}
-
-input {
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 0 0.5em;
+  justify-content: center;
 }
 
 img {
   background-color: #c3d08b;
   padding: 16px;
   margin: 16px;
+  width: 300px;
+  border: 2px inset black;
+}
+
+input {
+  max-width: 90px;
+  box-sizing: border-box;
+}
+
+select {
+  width: 90px;
+  padding: 1px 2px;
+  border-radius: 0.25em;
 }
 
 .container {
-  background-color: #f9cc9d;
-  width: fit-content;
   align-self: center;
   display: flex;
   justify-content:  center;
+  display: flex;
+}
+
+.container-inner {
+  background-color: #f9cc9d;
+  border: dashed 2px black;
+}
+
+.input-container {
+  display: flex;
+  gap: 0.25em;
+  padding: 0.25em 0.5em;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .input-inner {
   display: flex;
   gap: 0.25em;
+  border: 1px solid grey;
+  border-radius: 0.25em;
+  padding: 0 0.25em;
+}
+
+input[type=button] {
+  padding: 0.5em 0.75em;
+  width: fit-content;
+  max-width: fit-content;
+  cursor: pointer;
+  border: 1px solid grey;
+  border-radius: 0.5em;
+  background-color: lightgreen;
+}
+
+input[type=button]:hover {
+  background-color: rgb(108, 177, 108);
+  color: white;
+  box-shadow: 1px 1px 5px grey;
+}
+
+input[type=number] {
+  max-width: 4em;
+  border: none;
+}
+
+.input-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+p {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.25em 0.5em;
+  border: solid 1px grey;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 2px grey;
+  margin: 0.5em 0;
+  flex-wrap: wrap;
+}
+
+#individualPaddingInput .wrapper, #individualMarginInput .wrapper {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  padding-right: 0.25em;
+}
+
+.input-inner:has(input[type=checkbox]) {
+  border: none;
+}
+
+.remove-border {
+  border: none;
+}
+
+.wrapper:has(input[type=button]) {
+  padding: 0;
+  border: none;
 }

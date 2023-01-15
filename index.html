@@ -6,35 +6,34 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
+		<h1>The Box Model</h1>
 		<div class="container">
-			<img
-				id="myImage"
-				src="https://i.pinimg.com/originals/84/01/f4/8401f43e179d1ea048869dad5581d7b4.jpg"
-				alt="My Image"
-			/>
+			<div class="container-inner">
+				<img
+					id="myImage"
+					src="https://i.pinimg.com/originals/84/01/f4/8401f43e179d1ea048869dad5581d7b4.jpg"
+					alt="My Image"
+				/>
+			</div>
 		</div>
 		<form>
-			<div class="input-container">
+			<div class="wrapper">
 				<label for="height">Height:</label>
 				<div class="input-inner">
-					<input type="text" id="height" name="height" /> px
+					<input type="number" id="height" name="height" /> px
 				</div>
-			</div>
-			<div class="input-container">
 				<label for="width">Width:</label>
 				<div class="input-inner">
-					<input type="text" id="width" name="width" /> px
+					<input type="number" id="width" name="width" /> px
 				</div>
 			</div>
-			<div class="input-container">
+			<div class="wrapper">
 				<label for="borderWidth">Border Width:</label>
 				<div class="input-inner">
-					<input type="text" id="borderWidth" name="borderWidth" /> px
+					<input type="number" id="borderWidth" name="borderWidth" /> px
 				</div>
-			</div>
-			<div class="input-container">
 				<label for="borderStyle">Border Style:</label>
-				<div class="input-inner">
+				<div class="input-inner remove-border">
 					<select id="borderStyle" name="borderStyle">
 						<option value="none">None</option>
 						<option value="solid">Solid</option>
@@ -48,13 +47,15 @@
 					</select>
 				</div>
 			</div>
-			<div class="input-container">
-				<label for="padding">Padding:</label>
-				<div class="input-inner">
-					<input type="text" id="padding" name="padding" /> px
+			<div class="wrapper">
+				<div class="input-inner remove-border">
+					<label for="padding">Padding:</label>
+					<div class="input-inner">
+						<input type="number" id="padding" name="padding" /> px
+					</div>
 				</div>
 				<div class="input-inner">
-					<label for="adjustPadding">Adjust Individual Values:</label>
+					<label for="adjustPadding">Adjust Individually:</label>
 					<input
 						type="checkbox"
 						id="adjustPadding"
@@ -62,56 +63,82 @@
 						onclick="displayIndividualPaddingInput()"
 					/>
 				</div>
-			</div>
-			<div id="individualPaddingInput" style="display: none">
-				<div class="input-container">
-					<label for="paddingTop">Padding Top:</label>
-					<div class="input-inner">
-						<input type="text" id="paddingTop" name="paddingTop" /> px
+				<div id="individualPaddingInput" style="display: none">
+					<div class="wrapper">
+						<label for="paddingTop">Top:</label>
+						<div class="input-inner">
+							<input type="number" id="paddingTop" name="paddingTop" /> px
+						</div>
+					</div>
+					<div class="wrapper">
+						<label for="paddingRight">Right:</label>
+						<div class="input-inner">
+							<input type="number" id="paddingRight" name="paddingRight" /> px
+						</div>
+					</div>
+					<div class="wrapper">
+						<label for="paddingBottom">Bottom:</label>
+						<div class="input-inner">
+							<input type="number" id="paddingBottom" name="paddingBottom" /> px
+						</div>
+					</div>
+					<div class="wrapper">
+						<label for="paddingLeft">Left:</label>
+						<div class="input-inner">
+							<input type="number" id="paddingLeft" name="paddingLeft" /> px
+						</div>
 					</div>
 				</div>
-				<div class="input-container">
-					<label for="paddingRight">Padding Right:</label>
-					<div class="input-inner">
-						<input type="text" id="paddingRight" name="paddingRight" /> px
-					</div>
-				</div>
-				<div class="input-container">
-					<label for="paddingBottom">Padding Bottom:</label>
-					<div class="input-inner">
-						<input type="text" id="paddingBottom" name="paddingBottom" /> px
-					</div>
-				</div>
-				<div class="input-container">
-					<label for="paddingLeft">Padding Left:</label>
-					<div class="input-inner">
-						<input type="text" id="paddingLeft" name="paddingLeft" /> px
-					</div>
-				</div>
-			</div>
-			<label for="margin">Margin:</label>
-			<input type="text" id="margin" name="margin" /> px
-			<label for="adjustMargin">Adjust Margin</label>
-			<input
-				type="checkbox"
-				id="adjustMargin"
-				name="adjustMargin"
-				onclick="displayIndividualMarginInput()"
-			/>
-			<div id="individualMarginInput" style="display: none">
-				<label for="marginTop">Margin Top:</label>
-				<input type="text" id="marginTop" name="marginTop" /> px
-				<label for="marginRight">Margin Right:</label>
-				<input type="text" id="marginRight" name="marginRight" /> px
-				<label for="marginBottom">Margin Bottom:</label>
-				<input type="text" id="marginBottom" name="marginBottom" /> px
-				<label for="marginLeft">Margin Left:</label>
-				<input type="text" id="marginLeft" name="marginLeft" /> px
 			</div>
 
-			<input type="button" value="Adjust Image" onclick="adjustImage()" />
+			<div class="wrapper">
+				<div class="input-inner remove-border">
+					<label for="margin">Margin:</label>
+					<div class="input-inner">
+						<input type="number" id="margin" name="margin" /> px
+					</div>
+				</div>
+				<div class="input-inner">
+					<label for="adjustMargin">Adjust Individually</label>
+					<input
+						type="checkbox"
+						id="adjustMargin"
+						name="adjustMargin"
+						onclick="displayIndividualMarginInput()"
+					/>
+				</div>
+				<div id="individualMarginInput" style="display: none">
+					<div class="wrapper">
+						<label for="marginTop">Top:</label>
+						<div class="input-inner">
+							<input type="number" id="marginTop" name="marginTop" /> px
+						</div>
+					</div>
+					<div class="wrapper">
+						<label for="marginRight">Right:</label>
+						<div class="input-inner">
+							<input type="number" id="marginRight" name="marginRight" /> px
+						</div>
+					</div>
+					<div class="wrapper">
+						<label for="marginBottom">Bottom:</label>
+						<div class="input-inner">
+							<input type="number" id="marginBottom" name="marginBottom" /> px
+						</div>
+					</div>
+					<div class="wrapper">
+						<label for="marginLeft">Left:</label>
+						<div class="input-inner">
+							<input type="number" id="marginLeft" name="marginLeft" /> px
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="wrapper">
+				<input type="button" value="Update" onclick="adjustImage()" />
+			</div>
 		</form>
-
 		<script src="scripts.js"></script>
 	</body>
 </html>
