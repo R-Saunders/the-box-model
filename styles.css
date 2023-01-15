@@ -1,0 +1,46 @@
+html {
+  /* position: relative; */
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+form {
+  /* position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+  width: 100%;
+  background-color: beige;
+  padding: 1rem 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  gap: 1rem;
+  flex-flow: row wrap;
+}
+
+input {
+  width: 100%;
+}
+
+img {
+  background-color: #c3d08b;
+  padding: 16px;
+  margin: 16px;
+}
+
+.container {
+  background-color: #f9cc9d;
+  width: fit-content;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.input-inner {
+  display: flex;
+  gap: 0.25em;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Box Model</title>
+		<link rel="stylesheet" href="styles.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div class="container">
+			<img
+				id="myImage"
+				src="https://i.pinimg.com/originals/84/01/f4/8401f43e179d1ea048869dad5581d7b4.jpg"
+				alt="My Image"
+			/>
+		</div>
+		<form>
+			<div class="input-container">
+				<label for="height">Height:</label>
+				<div class="input-inner">
+					<input type="text" id="height" name="height" /> px
+				</div>
+			</div>
+			<div class="input-container">
+				<label for="width">Width:</label>
+				<div class="input-inner">
+					<input type="text" id="width" name="width" /> px
+				</div>
+			</div>
+			<div class="input-container">
+				<label for="borderWidth">Border Width:</label>
+				<div class="input-inner">
+					<input type="text" id="borderWidth" name="borderWidth" /> px
+				</div>
+			</div>
+			<div class="input-container">
+				<label for="borderStyle">Border Style:</label>
+				<div class="input-inner">
+					<select id="borderStyle" name="borderStyle">
+						<option value="none">None</option>
+						<option value="solid">Solid</option>
+						<option value="dotted">Dotted</option>
+						<option value="dashed">Dashed</option>
+						<option value="double">Double</option>
+						<option value="groove">Groove</option>
+						<option value="ridge">Ridge</option>
+						<option value="inset">Inset</option>
+						<option value="outset">Outset</option>
+					</select>
+				</div>
+			</div>
+			<div class="input-container">
+				<label for="padding">Padding:</label>
+				<div class="input-inner">
+					<input type="text" id="padding" name="padding" /> px
+				</div>
+				<div class="input-inner">
+					<label for="adjustPadding">Adjust Individual Values:</label>
+					<input
+						type="checkbox"
+						id="adjustPadding"
+						name="adjustPadding"
+						onclick="displayIndividualPaddingInput()"
+					/>
+				</div>
+			</div>
+			<div id="individualPaddingInput" style="display: none">
+				<div class="input-container">
+					<label for="paddingTop">Padding Top:</label>
+					<div class="input-inner">
+						<input type="text" id="paddingTop" name="paddingTop" /> px
+					</div>
+				</div>
+				<div class="input-container">
+					<label for="paddingRight">Padding Right:</label>
+					<div class="input-inner">
+						<input type="text" id="paddingRight" name="paddingRight" /> px
+					</div>
+				</div>
+				<div class="input-container">
+					<label for="paddingBottom">Padding Bottom:</label>
+					<div class="input-inner">
+						<input type="text" id="paddingBottom" name="paddingBottom" /> px
+					</div>
+				</div>
+				<div class="input-container">
+					<label for="paddingLeft">Padding Left:</label>
+					<div class="input-inner">
+						<input type="text" id="paddingLeft" name="paddingLeft" /> px
+					</div>
+				</div>
+			</div>
+			<label for="margin">Margin:</label>
+			<input type="text" id="margin" name="margin" /> px
+			<label for="adjustMargin">Adjust Margin</label>
+			<input
+				type="checkbox"
+				id="adjustMargin"
+				name="adjustMargin"
+				onclick="displayIndividualMarginInput()"
+			/>
+			<div id="individualMarginInput" style="display: none">
+				<label for="marginTop">Margin Top:</label>
+				<input type="text" id="marginTop" name="marginTop" /> px
+				<label for="marginRight">Margin Right:</label>
+				<input type="text" id="marginRight" name="marginRight" /> px
+				<label for="marginBottom">Margin Bottom:</label>
+				<input type="text" id="marginBottom" name="marginBottom" /> px
+				<label for="marginLeft">Margin Left:</label>
+				<input type="text" id="marginLeft" name="marginLeft" /> px
+			</div>
+
+			<input type="button" value="Adjust Image" onclick="adjustImage()" />
+		</form>
+
+		<script src="scripts.js"></script>
+	</body>
+</html>
