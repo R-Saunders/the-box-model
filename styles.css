@@ -5,13 +5,10 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
+  display: grid;
 }
 
 form {
-  /* position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0; */
   width: 100%;
   background-color: beige;
   padding: 1rem 0.5rem;
@@ -34,10 +31,9 @@ img {
 .container {
   background-color: #f9cc9d;
   width: fit-content;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
+  align-self: center;
+  display: flex;
+  justify-content:  center;
 }
 
 .input-inner {
