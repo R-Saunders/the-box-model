@@ -3,6 +3,7 @@ body {
   margin: 0;
   display: grid;
   grid-template-rows: 1fr auto;
+  font-family: monospace;
 }
 
 h1 {
@@ -11,6 +12,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 10;
+  text-align: center;
 }
 
 form {
@@ -79,6 +81,7 @@ input[type=button] {
   border: 1px solid grey;
   border-radius: 0.5em;
   background-color: lightgreen;
+  font-family: monospace;
 }
 
 input[type=button]:hover {
